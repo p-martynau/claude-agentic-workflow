@@ -1,0 +1,180 @@
+{
+  "run_id": "run-001",
+  "created_at": "2026-09-28T09:00:00Z",
+  "updated_at": "2026-09-28T10:45:00Z",
+  "original_request": "Plan a one-day indoor birthday party for my daughter turning 8, in London, for about 20 guests (mostly children aged 6-10 plus their parents). Budget is a fixed \u00a31,200 GBP. We need kid-friendly activities, food that covers at least one vegetarian and one nut-allergy option, and the venue should have easy parking or be near public transport. Date: Saturday 14 November 2026, 12:00-16:00.",
+  "requirements_confirmed": true,
+  "execution_plan_version": 1,
+  "execution_plan": [
+    {
+      "agent": "requirements-formalizer",
+      "depends_on": [],
+      "status": "completed"
+    },
+    {
+      "agent": "venue-researcher",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "activities-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "catering-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "services-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "schedule-builder",
+      "depends_on": [
+        "venue-researcher",
+        "activities-planner",
+        "catering-planner",
+        "services-planner"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "budget-aggregator",
+      "depends_on": [
+        "schedule-builder"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "validator",
+      "depends_on": [
+        "budget-aggregator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "event-plan-builder",
+      "depends_on": [
+        "validator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "html-builder",
+      "depends_on": [
+        "event-plan-builder"
+      ],
+      "status": "completed"
+    }
+  ],
+  "artifacts": {
+    "requirements.md": {
+      "path": "artifacts/requirements.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "requirements-formalizer",
+      "updated_at": "2026-09-28T09:15:00Z"
+    },
+    "venues.md": {
+      "path": "artifacts/venues.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "venue-researcher",
+      "updated_at": "2026-09-28T09:35:00Z"
+    },
+    "activities.md": {
+      "path": "artifacts/activities.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "activities-planner",
+      "updated_at": "2026-09-28T09:35:00Z"
+    },
+    "catering.md": {
+      "path": "artifacts/catering.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "catering-planner",
+      "updated_at": "2026-09-28T09:35:00Z"
+    },
+    "services.md": {
+      "path": "artifacts/services.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "services-planner",
+      "updated_at": "2026-09-28T10:15:00Z"
+    },
+    "schedule.md": {
+      "path": "artifacts/schedule.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "schedule-builder",
+      "updated_at": "2026-09-28T09:45:00Z"
+    },
+    "budget.md": {
+      "path": "artifacts/budget.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "budget-aggregator",
+      "updated_at": "2026-09-28T09:55:00Z"
+    },
+    "validation-report.md": {
+      "path": "artifacts/validation-report.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "validator",
+      "updated_at": "2026-09-28T10:25:00Z"
+    },
+    "event-plan.md": {
+      "path": "artifacts/event-plan.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "event-plan-builder",
+      "hash": "ed8fd972ee3505b2cdcaf857e367f79dabaf3860e89f2aadcf47806c98f0e9ff",
+      "updated_at": "2026-09-28T10:35:00Z"
+    },
+    "event-plan.html": {
+      "path": "output/event-plan.html",
+      "version": 1,
+      "status": "READY",
+      "written_by": "html-builder",
+      "updated_at": "2026-09-28T10:45:00Z"
+    }
+  },
+  "quality_gates": [
+    {
+      "gate": "services-fit",
+      "artifact": "services.md",
+      "result": "FAIL",
+      "finding": "Decoration setup/teardown duration was not stated by the source and services.md only raised it as an open issue without a stated resolution/assumption, so the service's timing was not fully accounted for.",
+      "responsible_agent": "services-planner",
+      "retry_count": 1,
+      "resolved": true,
+      "resolved_at": "2026-09-28T10:20:00Z"
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "requested_version": 1,
+    "requested_hash": "ed8fd972ee3505b2cdcaf857e367f79dabaf3860e89f2aadcf47806c98f0e9ff",
+    "approved_version": 1,
+    "approved_hash": "ed8fd972ee3505b2cdcaf857e367f79dabaf3860e89f2aadcf47806c98f0e9ff",
+    "approved_at": "2026-09-28T10:40:00Z",
+    "feedback_history": []
+  },
+  "output": {
+    "final_markdown_path": "artifacts/event-plan.md",
+    "final_html_path": "output/event-plan.html"
+  },
+  "notes": "weather-researcher not selected: event is fully indoor per confirmed requirements."
+}

@@ -1,0 +1,353 @@
+{
+  "run_id": "run-003",
+  "created_at": "2026-09-28T09:00:00Z",
+  "updated_at": "2026-09-28T15:43:00Z",
+  "original_request": "We're organizing an outdoor community summer celebration in a Bristol park for about 80 local residents, all ages including families with young children and some older adults. Date: Saturday 6 June 2027, 13:00-18:00, outdoors, so we need a real weather check and a solid rain contingency. Budget is \u00a33,000 GBP. We want activities for kids and adults, some live or recorded music, simple catering (including at least one vegetarian and one halal-friendly option), and basic services like a PA system and litter/waste management. Accessibility for older adults and pushchairs matters, and there's limited on-street parking nearby.",
+  "requirements_confirmed": true,
+  "execution_plan_version": 3,
+  "execution_plan": [
+    {
+      "agent": "requirements-formalizer",
+      "depends_on": [],
+      "status": "completed"
+    },
+    {
+      "agent": "venue-researcher",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "weather-researcher",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "activities-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "catering-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "services-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "schedule-builder",
+      "depends_on": [
+        "venue-researcher",
+        "weather-researcher",
+        "activities-planner",
+        "catering-planner",
+        "services-planner"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "budget-aggregator",
+      "depends_on": [
+        "schedule-builder"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "validator",
+      "depends_on": [
+        "budget-aggregator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "event-plan-builder",
+      "depends_on": [
+        "validator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "html-builder",
+      "depends_on": [
+        "event-plan-builder"
+      ],
+      "status": "completed"
+    }
+  ],
+  "artifacts": {
+    "requirements.md": {
+      "path": "artifacts/requirements.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "requirements-formalizer",
+      "updated_at": "2026-09-28T09:19:00Z"
+    },
+    "venues.md": {
+      "path": "artifacts/venues.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "venue-researcher",
+      "updated_at": "2026-09-28T09:58:00Z"
+    },
+    "weather.md": {
+      "path": "artifacts/weather.md",
+      "version": 3,
+      "status": "READY",
+      "written_by": "weather-researcher",
+      "updated_at": "2026-09-28T15:20:00Z"
+    },
+    "activities.md": {
+      "path": "artifacts/activities.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "activities-planner",
+      "updated_at": "2026-09-28T09:59:00Z"
+    },
+    "catering.md": {
+      "path": "artifacts/catering.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "catering-planner",
+      "updated_at": "2026-09-28T10:00:00Z"
+    },
+    "services.md": {
+      "path": "artifacts/services.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "services-planner",
+      "updated_at": "2026-09-28T10:01:00Z"
+    },
+    "schedule.md": {
+      "path": "artifacts/schedule.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "schedule-builder",
+      "updated_at": "2026-09-28T14:56:00Z"
+    },
+    "budget.md": {
+      "path": "artifacts/budget.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "budget-aggregator",
+      "updated_at": "2026-09-28T14:20:00Z"
+    },
+    "validation-report.md": {
+      "path": "artifacts/validation-report.md",
+      "version": 3,
+      "status": "READY",
+      "written_by": "validator",
+      "updated_at": "2026-09-28T15:30:00Z"
+    },
+    "event-plan.md": {
+      "path": "artifacts/event-plan.md",
+      "version": 3,
+      "status": "READY",
+      "written_by": "event-plan-builder",
+      "updated_at": "2026-09-28T15:35:00Z",
+      "hash": "784de3e86ebb668d8b91447c6336cd8ce21d2506f08b2b99673153f84a13a57f"
+    },
+    "event-plan.html": {
+      "path": "output/event-plan.html",
+      "version": 2,
+      "status": "READY",
+      "written_by": "html-builder",
+      "updated_at": "2026-09-28T15:43:00Z"
+    }
+  },
+  "quality_gates": [
+    {
+      "gate": "requirements-completeness",
+      "artifact": "requirements.md",
+      "result": "PASS",
+      "finding": "All 14 required categories present and confirmed.",
+      "responsible_agent": "requirements-formalizer",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "artifact-structure",
+      "artifact": "all",
+      "result": "PASS",
+      "finding": "All artifacts follow the shared Markdown contract.",
+      "responsible_agent": null,
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "budget-limit",
+      "artifact": "budget.md",
+      "result": "PASS",
+      "finding": "\u00a32,123.52 total incl. 12% contingency vs. \u00a33,000 limit.",
+      "responsible_agent": "budget-aggregator",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "schedule-feasibility",
+      "artifact": "schedule.md",
+      "result": "PASS",
+      "finding": "Full 11:00-19:00 booked window accounted for, no overrun.",
+      "responsible_agent": "schedule-builder",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "no-overlapping-activities",
+      "artifact": "schedule.md",
+      "result": "PASS",
+      "finding": "All same-time items justified; one potential conflict (quiz vs live music) resolved by re-timing.",
+      "responsible_agent": "schedule-builder",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "venue-fit",
+      "artifact": "venues.md",
+      "result": "PASS",
+      "finding": "Trinity Centre matches location, capacity, indoor/outdoor backup, parking.",
+      "responsible_agent": "venue-researcher",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "catering-fit",
+      "artifact": "catering.md",
+      "result": "PASS",
+      "finding": "Vegetarian and explicitly halal-branded option present; per-head cost is an estimate pending firm quote (carried to approval).",
+      "responsible_agent": "catering-planner",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "services-fit",
+      "artifact": "services.md",
+      "result": "PASS",
+      "finding": "PA, live music, waste, insurance all present with timing and cost.",
+      "responsible_agent": "services-planner",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "travel-and-transitions",
+      "artifact": "schedule.md",
+      "result": "PASS",
+      "finding": "Single venue, no offsite travel; setup/teardown fit the booked day.",
+      "responsible_agent": "schedule-builder",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "weather-readiness",
+      "artifact": "weather.md",
+      "result": "PASS",
+      "finding": "v1: seasonal outlook correctly labelled, with a trigger threshold, but the approval step found the decision-maker/guest-communication detail too vague. v2: weather.md revised to name the on-the-day decision-maker, the exact guest announcement, and the mid-event move threshold; re-validated PASS. v3: same decision-maker/communication content, but the underlying outlook now rests on six years of real mcp__open-meteo__weather_archive data (30 day-samples) instead of one WebFetch-sourced year; re-validated PASS.",
+      "responsible_agent": "weather-researcher",
+      "retry_count": 1,
+      "resolved": true,
+      "resolved_at": "2026-09-28T15:30:00Z"
+    },
+    {
+      "gate": "no-duplicate-recommendations",
+      "artifact": "all",
+      "result": "PASS",
+      "finding": "No venue, vendor, or activity recommended twice.",
+      "responsible_agent": null,
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "meaningful-program",
+      "artifact": "schedule.md",
+      "result": "PASS",
+      "finding": "Every segment has at least one intentional activity.",
+      "responsible_agent": "schedule-builder",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T14:28:00Z"
+    },
+    {
+      "gate": "source-validity",
+      "artifact": "all",
+      "result": "PASS",
+      "finding": "Every recommendation traces to a real retrieved URL or, for weather.md v3, a real mcp__open-meteo__* MCP tool call (previously WebFetch against the same public API in v1/v2 \u2014 corrected in v3 to use the configured MCP server directly).",
+      "responsible_agent": null,
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T15:30:00Z"
+    },
+    {
+      "gate": "final-consistency",
+      "artifact": "event-plan.md",
+      "result": "PASS",
+      "finding": "event-plan.md v3 reflects the same decision-maker/announcement language as weather.md v3 and schedule.md v2 in both its contingency section and its schedule table, and its 'Inputs used' section now correctly lists each artifact's actual current version; no contradiction found.",
+      "responsible_agent": "event-plan-builder",
+      "retry_count": 0,
+      "resolved": true,
+      "resolved_at": "2026-09-28T15:35:00Z"
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "requested_version": 3,
+    "requested_hash": "784de3e86ebb668d8b91447c6336cd8ce21d2506f08b2b99673153f84a13a57f",
+    "approved_version": 3,
+    "approved_hash": "784de3e86ebb668d8b91447c6336cd8ce21d2506f08b2b99673153f84a13a57f",
+    "approved_at": "2026-09-28T15:42:00Z",
+    "feedback_history": [
+      {
+        "version": 1,
+        "hash": "bc6775db3ef556e8503fb9c58cdd7cbc7b9d6ee34bcfa75abd095290e6f7ea15",
+        "response": "This mostly looks great, thank you \u2014 but the weather contingency section is too vague for us to action on the day. It says 'a real chance of light rain' and points at a trigger threshold, but it doesn't say clearly enough, in plain terms, who makes the call and what the guests are actually told if it does rain. Please make the rain contingency more concrete before we approve this.",
+        "decision": "rejected",
+        "received_at": "2026-09-28T14:45:00Z",
+        "routed_to": [
+          "weather-researcher",
+          "schedule-builder"
+        ]
+      },
+      {
+        "version": 2,
+        "hash": "162013ff07b6868528f6cdfb1da5b2fc49e2ba89defda34a03fb653d4ddceb2c",
+        "response": "APPROVE",
+        "decision": "approved",
+        "received_at": "2026-09-28T15:15:00Z",
+        "routed_to": []
+      },
+      {
+        "version": 3,
+        "hash": "784de3e86ebb668d8b91447c6336cd8ce21d2506f08b2b99673153f84a13a57f",
+        "response": "APPROVE",
+        "decision": "approved",
+        "received_at": "2026-09-28T15:42:00Z",
+        "routed_to": [],
+        "note": "Not a user rejection/re-approval cycle: v3 was a post-approval compliance correction (real MCP tool usage) requiring re-approval because the plan hash changed. See logs/mcp-note.md and logs/revision-log.md."
+      }
+    ]
+  },
+  "output": {
+    "final_markdown_path": "artifacts/event-plan.md",
+    "final_html_path": "output/event-plan.html"
+  }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northbridge Analytics Strategy Workshop — 18 November 2026</title>
+<style>
+  :root {
+    --ink: #1c1f24;
+    --muted: #5b6470;
+    --accent: #1f6f5c;
+    --border: #dde2e6;
+    --bg-soft: #f6f8f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.55;
+    background: #fff;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    z-index: 10;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+  nav a:hover { opacity: 1; text-decoration: underline; }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 4rem;
+  }
+  h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-top: 0; }
+  section {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  section:last-of-type { border-bottom: none; }
+  h2 {
+    font-size: 1.3rem;
+    color: var(--accent);
+    border-left: 4px solid var(--accent);
+    padding-left: 0.6rem;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  th { background: var(--bg-soft); }
+  tr.total td {
+    font-weight: 700;
+    border-top: 2px solid var(--ink);
+    background: var(--bg-soft);
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.15rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .note {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin: 0.75rem 0;
+  }
+  ul { padding-left: 1.3rem; }
+  a { color: var(--accent); }
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.85rem;
+    padding: 1.5rem;
+  }
+  @media print {
+    nav { display: none; }
+    section { border-bottom: none; page-break-inside: avoid; }
+    body { font-family: Georgia, "Times New Roman", serif; color: #000; background: #fff; }
+    a { color: #000; text-decoration: underline; }
+    h2 { color: #000; border-left-color: #000; }
+    .badge { background: #000; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#requirements">Requirements</a>
+  <a href="#venue">Venue</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#activities">Activities</a>
+  <a href="#catering">Catering</a>
+  <a href="#services">Services</a>
+  <a href="#budget">Budget</a>
+  <a href="#sources">Sources</a>
+</nav>
+<main>
+  <h1>Northbridge Analytics — Internal Strategy Workshop</h1>
+  <p class="subtitle">Manchester · 18 November 2026 (±1 week if venue unavailable) · 09:00–17:00 · <span class="badge">Approved</span></p>
+
+  <section id="overview">
+    <h2>Overview</h2>
+    <p>A one-day internal strategy workshop for Northbridge Analytics Ltd, held in Manchester for
+    approximately 40 participants. The tone is business-casual and professional, with no theme.
+    The full-day agenda is facilitated internally, supported by an accessible venue, a working
+    lunch that meets all stated dietary needs, and a coordinated AV/equipment vendor so the
+    internal team does not need to manage technical setup themselves.</p>
+    <div class="note">This plan passed every applicable quality gate on its second validation
+    pass. The first pass found that the AV vendor's delivery/setup/collection fee had not yet been
+    priced into the plan; that gap was closed before this version was finalised. See
+    "Services" and "Budget" below.</div>
+  </section>
+
+  <section id="requirements">
+    <h2>Confirmed requirements summary</h2>
+    <ul>
+      <li><strong>Guests:</strong> ~40 participants, all adult employees, no children or VIP staging.</li>
+      <li><strong>Schedule:</strong> Strict 09:00–17:00 window with a working lunch.</li>
+      <li><strong>Accessibility:</strong> Step-free venue access required; on-site or very close parking for a few drivers; good transit links for the rest.</li>
+      <li><strong>Dietary needs:</strong> Vegetarian, vegan, and at least one gluten-free option.</li>
+      <li><strong>Technology:</strong> Projector/screen, microphone setup, reliable Wi-Fi, whiteboard or flipcharts.</li>
+      <li><strong>Budget:</strong> £6,000.00 GBP total, with vendor-coordinated AV/equipment since the internal team does not want to self-manage it.</li>
+    </ul>
+  </section>
+
+  <section id="venue">
+    <h2>Venue</h2>
+    <p><strong>King's House Conference Centre</strong>, Sidney Street, Manchester M1 7HB.</p>
+    <ul>
+      <li>Step-free access to all main areas, accessible toilets, lift serving every floor.</li>
+      <li>Accessible on-street parking on Sidney Street plus nearby car parks for drivers; central-Manchester transit links for everyone else.</li>
+      <li>High-speed Wi-Fi in every room; flipchart/whiteboard stock to be confirmed at booking, with the AV vendor available as a fallback.</li>
+      <li>Estimated full-day hire: <strong>£480.00</strong> (estimate — no published day-rate for a 40-person room; confirm firm quote at 0161 276 8194).</li>
+    </ul>
+  </section>
+
+  <section id="schedule">
+    <h2>Schedule</h2>
+    <table>
+      <thead><tr><th>Time</th><th>Item</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>08:00–09:00</td><td>AV vendor load-in, setup &amp; test</td><td>Outside guest hours</td></tr>
+        <tr><td>09:00–09:15</td><td>Arrival &amp; registration</td><td>AM tea/coffee available</td></tr>
+        <tr><td>09:15–09:30</td><td>Welcome &amp; objectives</td><td>Projector + microphone</td></tr>
+        <tr><td>09:30–11:00</td><td>Strategy session 1</td><td>Internally facilitated</td></tr>
+        <tr><td>11:00–11:15</td><td>Energiser</td><td>No-cost, self-facilitated</td></tr>
+        <tr><td>11:15–11:30</td><td>Break</td><td></td></tr>
+        <tr><td>11:30–12:45</td><td>Strategy session 2</td><td>Breakout groups, flipcharts</td></tr>
+        <tr><td>12:45–13:30</td><td>Working lunch</td><td>Vegetarian/vegan/gluten-free confirmed</td></tr>
+        <tr><td>13:30–14:45</td><td>Strategy session 3</td><td>Full-group discussion</td></tr>
+        <tr><td>14:45–15:00</td><td>Break</td><td>PM tea/coffee</td></tr>
+        <tr><td>15:00–16:15</td><td>Strategy session 4</td><td>Prioritisation &amp; action planning</td></tr>
+        <tr><td>16:15–16:45</td><td>Report-back &amp; next steps</td><td>Projector + microphone</td></tr>
+        <tr><td>16:45–17:00</td><td>Wrap-up &amp; close</td><td></td></tr>
+        <tr><td>17:00–17:30</td><td>AV vendor teardown &amp; collection</td><td>Outside guest hours</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="activities">
+    <h2>Activities</h2>
+    <p>Strategy sessions are facilitated internally by Northbridge Analytics at no external cost.
+    A 15-minute mid-morning energiser is included at no cost using a self-facilitated icebreaker
+    format. An optional paid alternative — a short conference-energiser session from
+    <a href="https://laughtercise.co.uk/team-building/manchester/" target="_blank" rel="noopener">Laughtercise</a>
+    — is available on request but is not included in the budget below pending a direct quote.</p>
+  </section>
+
+  <section id="catering">
+    <h2>Catering</h2>
+    <p>Provider: <a href="https://www.corporatelunch.co.uk/office-lunch-catering-manchester/" target="_blank" rel="noopener">Corporate Lunch</a>.
+    Working lunch on the Gold buffet tier (£20.95/head, list price), with confirmed vegetarian,
+    vegan, and gluten-free options. AM tea/coffee + pastries and PM tea/coffee + biscuits are
+    estimated add-ons. Free delivery applies (order exceeds £200). Allergen specifics beyond
+    vegetarian/vegan/gluten-free are to be confirmed with the provider once final headcount is set.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p>AV/equipment vendor: <a href="https://eventproductiongroup.co.uk/av-hire-manchester/" target="_blank" rel="noopener">Event Production Group</a>
+    (Trafford Park, Manchester) — projector + screen, two wireless microphones + small PA, on-site
+    technician support, and a delivery/setup/collection fee covering the 08:00 load-in and 17:00
+    collection. All AV lines are estimates pending EPG's firm quote. Wi-Fi is provided by the venue
+    at no extra cost.</p>
+  </section>
+
+  <section id="budget">
+    <h2>Budget &amp; contingency</h2>
+    <table>
+      <thead><tr><th>Line item</th><th>Estimated or firm</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Venue day hire — King's House Conference Centre</td><td>Estimated</td><td>£480.00</td></tr>
+        <tr><td>Catering — working lunch (40 × £20.95)</td><td>List price</td><td>£838.00</td></tr>
+        <tr><td>Catering — AM tea/coffee + pastries (40 × £5.00)</td><td>Estimated</td><td>£200.00</td></tr>
+        <tr><td>Catering — PM tea/coffee + biscuits (40 × £3.00)</td><td>Estimated</td><td>£120.00</td></tr>
+        <tr><td>AV/equipment — projector + screen</td><td>Estimated</td><td>£150.00</td></tr>
+        <tr><td>AV/equipment — wireless mics ×2 + PA</td><td>Estimated</td><td>£220.00</td></tr>
+        <tr><td>AV/equipment — delivery, setup &amp; collection fee</td><td>Estimated</td><td>£120.00</td></tr>
+        <tr><td>Contingency (10%)</td><td>—</td><td>£212.80</td></tr>
+        <tr class="total"><td>Grand total</td><td></td><td>£2,340.80</td></tr>
+        <tr><td>Budget limit</td><td>—</td><td>£6,000.00</td></tr>
+        <tr><td>Headroom</td><td>—</td><td>£3,659.20</td></tr>
+      </tbody>
+    </table>
+    <div class="note">All figures are estimates pending firm vendor quotes. The headroom below the
+    £6,000 limit is intentionally retained as a buffer in case firm quotes exceed these market-rate
+    estimates. This plan's first validation pass found that the AV delivery/setup/collection fee
+    was missing from the AV cost estimate; it has since been added to the total above.</div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://www.kingshouse.co.uk/" target="_blank" rel="noopener">King's House Conference Centre</a></li>
+      <li><a href="https://www.tagvenue.com/venues/manchester/4865/king-s-house-conference-centre" target="_blank" rel="noopener">King's House Conference Centre — Tagvenue listing</a></li>
+      <li><a href="https://www.tagvenue.com/rooms/manchester/9853/kings-house-conference-centre/first-floor-hall" target="_blank" rel="noopener">First Floor Hall — King's House, Tagvenue</a></li>
+      <li><a href="https://www.hyatt.com/hyatt-regency/en-US/manrm-hyatt-regency-manchester/meetings" target="_blank" rel="noopener">Meeting Rooms &amp; Conference Space Manchester — Hyatt Regency</a></li>
+      <li><a href="https://www.tagvenue.com/hire/conference-hotels/manchester" target="_blank" rel="noopener">The 16 Best Conference Hotels for Hire in Manchester — Tagvenue</a></li>
+      <li><a href="https://www.corporatelunch.co.uk/office-lunch-catering-manchester/" target="_blank" rel="noopener">Office Lunch Catering Manchester — Corporate Lunch</a></li>
+      <li><a href="https://www.corporatelunch.co.uk/catering-for-meetings-manchester/" target="_blank" rel="noopener">Catering For Meetings Manchester — Corporate Lunch</a></li>
+      <li><a href="https://manchestercateringcompany.com/corporate-catering-manchester/" target="_blank" rel="noopener">Corporate Catering Manchester — Manchester Catering Company</a></li>
+      <li><a href="https://eventproductiongroup.co.uk/av-hire-manchester/" target="_blank" rel="noopener">AV Hire Manchester — Event Production Group</a></li>
+      <li><a href="https://eventproductiongroup.co.uk/conference-av-hire-manchester/" target="_blank" rel="noopener">Conference AV Hire Manchester — Event Production Group</a></li>
+      <li><a href="https://laughtercise.co.uk/team-building/manchester/" target="_blank" rel="noopener">Laughtercise — Manchester team building</a></li>
+    </ul>
+  </section>
+
+  <footer>Northbridge Analytics internal strategy workshop guide — generated event plan, approved version 1.</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,179 @@
+{
+  "run_id": "run-002",
+  "created_at": "2026-09-29T08:55:00Z",
+  "updated_at": "2026-09-29T10:55:00Z",
+  "original_request": "We need a one-day internal strategy workshop in Manchester for about 40 participants. Strict schedule: 09:00-17:00, with a working lunch. We need step-free venue access and on-site or very close parking for a few attendees who drive, plus good transit links for the rest. Dietary needs include vegetarian, vegan, and at least one gluten-free option. We need a projector/screen and microphone setup, reliable Wi-Fi, and a whiteboard or flipcharts. Budget is \u00a36,000 GBP total, and we'd like some vendor coordination for the AV equipment since our team doesn't want to manage that themselves.",
+  "requirements_confirmed": true,
+  "execution_plan_version": 1,
+  "execution_plan": [
+    {
+      "agent": "requirements-formalizer",
+      "depends_on": [],
+      "status": "completed"
+    },
+    {
+      "agent": "venue-researcher",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "activities-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "catering-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "services-planner",
+      "depends_on": [
+        "requirements-formalizer"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "schedule-builder",
+      "depends_on": [
+        "venue-researcher",
+        "activities-planner",
+        "catering-planner",
+        "services-planner"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "budget-aggregator",
+      "depends_on": [
+        "schedule-builder"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "validator",
+      "depends_on": [
+        "budget-aggregator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "event-plan-builder",
+      "depends_on": [
+        "validator"
+      ],
+      "status": "completed"
+    },
+    {
+      "agent": "html-builder",
+      "depends_on": [
+        "event-plan-builder"
+      ],
+      "status": "completed"
+    }
+  ],
+  "artifacts": {
+    "requirements.md": {
+      "path": "artifacts/requirements.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "requirements-formalizer",
+      "updated_at": "2026-09-29T09:20:00Z"
+    },
+    "venues.md": {
+      "path": "artifacts/venues.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "venue-researcher",
+      "updated_at": "2026-09-29T09:41:00Z"
+    },
+    "activities.md": {
+      "path": "artifacts/activities.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "activities-planner",
+      "updated_at": "2026-09-29T09:42:00Z"
+    },
+    "catering.md": {
+      "path": "artifacts/catering.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "catering-planner",
+      "updated_at": "2026-09-29T09:44:00Z"
+    },
+    "services.md": {
+      "path": "artifacts/services.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "services-planner",
+      "updated_at": "2026-09-29T10:25:00Z"
+    },
+    "schedule.md": {
+      "path": "artifacts/schedule.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "schedule-builder",
+      "updated_at": "2026-09-29T09:55:00Z"
+    },
+    "budget.md": {
+      "path": "artifacts/budget.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "budget-aggregator",
+      "updated_at": "2026-09-29T10:32:00Z"
+    },
+    "validation-report.md": {
+      "path": "artifacts/validation-report.md",
+      "version": 2,
+      "status": "READY",
+      "written_by": "validator",
+      "updated_at": "2026-09-29T10:40:00Z"
+    },
+    "event-plan.md": {
+      "path": "artifacts/event-plan.md",
+      "version": 1,
+      "status": "READY",
+      "written_by": "event-plan-builder",
+      "updated_at": "2026-09-29T10:50:00Z",
+      "hash": "0688eaff550c34e5e76bc52b0be5a1b39af685537fd83085fa609d7975b28a0d"
+    },
+    "event-plan.html": {
+      "path": "output/event-plan.html",
+      "version": 1,
+      "status": "READY",
+      "written_by": "html-builder",
+      "updated_at": "2026-09-29T10:55:00Z"
+    }
+  },
+  "quality_gates": [
+    {
+      "gate": "services-fit",
+      "artifact": "services.md",
+      "result": "FAIL",
+      "finding": "services.md prices only EPG's equipment day-hire (projector/screen + mics/PA = \u00a3370) and omits the delivery, on-site setup, and collection fee that Manchester AV/event-production vendors (including EPG's own stated delivery/technician service model) routinely charge as a separate line item, so the AV service's estimated cost is not fully accounted for.",
+      "responsible_agent": "services-planner",
+      "retry_count": 1,
+      "resolved": true,
+      "resolved_at": "2026-09-29T10:40:00Z"
+    }
+  ],
+  "approval": {
+    "status": "approved",
+    "requested_version": 1,
+    "requested_hash": "0688eaff550c34e5e76bc52b0be5a1b39af685537fd83085fa609d7975b28a0d",
+    "approved_version": 1,
+    "approved_hash": "0688eaff550c34e5e76bc52b0be5a1b39af685537fd83085fa609d7975b28a0d",
+    "approved_at": "2026-09-29T10:52:30Z",
+    "feedback_history": []
+  },
+  "output": {
+    "final_markdown_path": "artifacts/event-plan.md",
+    "final_html_path": "output/event-plan.html"
+  }
+}
